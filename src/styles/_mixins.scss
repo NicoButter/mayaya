@@ -1,0 +1,101 @@
+// Mixins SCSS para Mayaya
+// Mixin para animaciones de fade in
+@mixin fade-in($duration: 0.5s, $delay: 0s) {
+  opacity: 0;
+  animation: fadeIn $duration ease-in-out $delay forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+// Mixin para animaciones de slide up
+@mixin slide-up($duration: 0.5s, $delay: 0s) {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp $duration ease-out $delay forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Mixin para animaciones de scale
+@mixin scale-in($duration: 0.5s, $delay: 0s) {
+  transform: scale(0.9);
+  opacity: 0;
+  animation: scaleIn $duration ease-out $delay forwards;
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Mixin para botones
+@mixin button-primary {
+  background: $gradient-primary;
+  color: white;
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  font-family: $font-family-primary;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all $transition-normal;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-hover;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Mixin para responsive
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: $large) {
+      @content;
+    }
+  }
+}
+
+// Mixin para flex center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin para texto elegante
+@mixin elegant-text {
+  font-family: $font-family-secondary;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $text-color;
+}

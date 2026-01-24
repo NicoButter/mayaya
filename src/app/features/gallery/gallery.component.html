@@ -1,0 +1,23 @@
+<section id="gallery" class="section gallery">
+  <div class="container">
+    <div class="section-header">
+      <h2>Galería de Trabajos</h2>
+      <p>Inspiración y creatividad en cada diseño</p>
+    </div>
+
+    <div #galleryContainer class="gallery-grid">
+      <div #galleryItem class="gallery-item" *ngFor="let item of galleryItems; let i = index" [style.transitionDelay]="i * 120 + 'ms'">
+        <div class="gallery-image">
+          <div class="placeholder-image">
+            <span>{{ item.id }}</span>
+            <p>Imagen {{ item.id }}</p>
+          </div>
+        </div>
+        <div class="gallery-info">
+          <h3>{{ item.title }}</h3>
+          <span class="category">{{ item.category }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

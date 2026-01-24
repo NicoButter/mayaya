@@ -1,0 +1,20 @@
+<section id="testimonials" class="section testimonials">
+  <div class="container">
+    <div #sectionHeader class="section-header">
+      <h2>Lo que dicen mis clientas</h2>
+      <p>Testimonios de mujeres que confían en Mayaya</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div #testimonialCard class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="rating">
+          <span *ngFor="let star of [].constructor(testimonial.rating)">⭐</span>
+        </div>
+        <p class="testimonial-text">"{{ testimonial.text }}"</p>
+        <div class="testimonial-author">
+          <strong>{{ testimonial.name }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

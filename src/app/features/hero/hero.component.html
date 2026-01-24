@@ -1,0 +1,42 @@
+<section id="hero" class="section hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 #heroTitle class="hero-title">
+        Arte en tus uñas,<br>
+        <span class="highlight">elegancia en tu estilo</span>
+      </h1>
+
+      <p #heroSubtitle class="hero-subtitle">
+        Descubre el mundo del nail art profesional con Mayaya.
+        Diseños únicos, técnicas innovadoras y un toque de sofisticación
+        para realzar tu belleza natural.
+      </p>
+
+      <div #heroActions class="hero-actions">
+        <button class="btn btn-primary" (click)="scrollToSection('contact')">
+          Reservar Turno
+        </button>
+        <button class="btn btn-outline" (click)="scrollToSection('gallery')">
+          Ver Galería
+        </button>
+      </div>
+    </div>
+
+    <div #heroImage class="hero-image">
+      <div class="image-placeholder">
+        <!-- Aquí irá la imagen principal de uñas -->
+        <div class="nail-art-preview">
+          💅✨
+        </div>
+        <p>Imagen representativa</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" (click)="scrollToSection('services')">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <p>Descubre más</p>
+  </div>
+</section>
