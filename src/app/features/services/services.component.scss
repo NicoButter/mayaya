@@ -33,7 +33,7 @@
 
     p {
       font-size: 1.1rem;
-      color: #666;
+      color: $text-light;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -72,7 +72,7 @@
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid #f0f0f0;
+    border: 1px solid $neutral-light;
 
     &:hover {
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);

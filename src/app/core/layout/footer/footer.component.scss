@@ -1,7 +1,7 @@
-@import '../../../../styles/variables';
+@import '../../../../styles/_variables.scss';
 
 footer {
-  background: #212121;
+  background: $neutral-dark;
   color: white;
   padding: 3rem 0 1rem;
 
@@ -29,7 +29,7 @@ footer {
 
     p {
       margin-bottom: 0.5rem;
-      color: #ccc;
+      color: $text-light;
       line-height: 1.6;
     }
 

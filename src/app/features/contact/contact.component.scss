@@ -1,3 +1,5 @@
+@import '../../../styles/_variables.scss';
+
 .contact {
   .section-header {
     text-align: center;
@@ -6,12 +8,12 @@
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #333;
+      color: $text-color;
     }
 
     p {
       font-size: 1.1rem;
-      color: #666;
+      color: $text-light;
     }
   }
 
@@ -35,24 +37,24 @@
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 600;
-          color: #333;
+          color: $text-color;
         }
 
         input, select, textarea {
           width: 100%;
           padding: 0.8rem;
-          border: 2px solid #e0e0e0;
+          border: 2px solid $neutral-light;
           border-radius: 8px;
           font-size: 1rem;
           transition: border-color 0.3s ease;
 
           &:focus {
             outline: none;
-            border-color: #e91e63;
+            border-color: $primary-color;
           }
 
           &::placeholder {
-            color: #999;
+            color: $text-light;
           }
         }
 
@@ -93,12 +95,12 @@
 
       h3 {
         margin-bottom: 0.5rem;
-        color: #333;
+        color: $text-color;
         font-size: 1.1rem;
       }
 
       p {
-        color: #666;
+        color: $text-light;
         line-height: 1.5;
       }
     }

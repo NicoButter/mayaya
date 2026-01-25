@@ -1,3 +1,5 @@
+@import '../../../styles/_variables.scss';
+
 .testimonials {
   .section-header {
     text-align: center;
@@ -58,7 +60,7 @@
 
     .testimonial-author {
       strong {
-        color: #ff9800;
+        color: $amber-gold;
         font-size: 1.1rem;
       }
     }
