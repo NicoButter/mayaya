@@ -1,5 +1,26 @@
+@import '../../../styles/_variables.scss';
+
 .hero {
+  background-image: url('/assets/hero/unias_hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); // Overlay para mejor legibilidad
+    z-index: 1;
+  }
+
   .container {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -22,7 +43,7 @@
       line-height: 1.2;
 
       .highlight {
-        background: linear-gradient(135deg, #ff9800, #ff5722);
+        background: $gradient-accent;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -38,7 +59,7 @@
       color: rgba(255, 255, 255, 0.9);
       margin-bottom: 2rem;
       line-height: 1.6;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Inclusive Sans", sans-serif;
 
       @media (max-width: 768px) {
         font-size: 1rem;
@@ -64,13 +85,13 @@
         transition: all 0.3s ease;
 
         &.btn-primary {
-          background: linear-gradient(135deg, #ff9800, #ff5722);
+          background: $gradient-accent;
           border: none;
           color: white;
 
           &:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3);
+            box-shadow: 0 10px 30px rgba($blaze-orange, 0.25);
           }
         }
 
@@ -81,30 +102,9 @@
 
           &:hover {
             background: white;
-            color: #e91e63;
+            color: $primary-color;
           }
         }
-      }
-    }
-  }
-
-  .hero-image {
-    .image-placeholder {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 3rem;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-
-      .nail-art-preview {
-        font-size: 5rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        color: rgba(255, 255, 255, 0.8);
-        font-style: italic;
       }
     }
   }

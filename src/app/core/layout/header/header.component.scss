@@ -1,3 +1,5 @@
+@import '../../../../styles/variables';
+
 .navbar {
   position: fixed;
   top: 0;
@@ -27,7 +29,7 @@
     h1 {
       margin: 0;
       font-size: 1.8rem;
-      background: linear-gradient(135deg, #e91e63, #9c27b0);
+      background: $gradient-primary;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -78,13 +80,9 @@
         display: block;
         padding: 1rem 1.5rem;
         text-decoration: none;
-        color: #333;
-        font-weight: 600;
-        transition: color 0.3s ease;
-        position: relative;
-
+        color: $text-color;
         &:hover {
-          color: #e91e63;
+          color: $primary-color;
 
           &::after {
             width: 100%;
@@ -98,7 +96,7 @@
           left: 50%;
           width: 0;
           height: 2px;
-          background: linear-gradient(135deg, #e91e63, #9c27b0);
+          background: $gradient-primary;
           transition: width 0.3s ease, left 0.3s ease;
           transform: translateX(-50%);
         }
@@ -121,10 +119,7 @@
     span {
       width: 25px;
       height: 3px;
-      background: #333;
-      margin: 3px 0;
-      transition: 0.3s;
-      border-radius: 2px;
+      background: $neutral-dark;
     }
 
     &.active {

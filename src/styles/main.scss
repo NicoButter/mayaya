@@ -70,7 +70,6 @@ p {
   position: relative;
 
   &.hero {
-    background: $gradient-primary;
     color: white;
     min-height: 100vh;
     @include flex-center;
@@ -79,7 +78,8 @@ p {
   }
 
   &.services {
-    background-color: white;
+    background: $gradient-primary;
+    color: white;
   }
 
   &.gallery {

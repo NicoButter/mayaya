@@ -1,3 +1,5 @@
+@import '../../../../styles/variables';
+
 footer {
   background: #212121;
   color: white;
@@ -21,8 +23,8 @@ footer {
 
     h3, h4 {
       margin-bottom: 1rem;
-      color: #e91e63;
-      font-family: 'Playfair Display', serif;
+      color: $primary-color;
+      font-family: "Inclusive Sans", sans-serif;
     }
 
     p {
@@ -39,12 +41,12 @@ footer {
         margin-bottom: 0.5rem;
 
         a {
-          color: #ccc;
+          color: $text-light;
           text-decoration: none;
           transition: color 0.3s ease;
 
           &:hover {
-            color: #e91e63;
+            color: $primary-color;
           }
         }
       }
@@ -54,7 +56,7 @@ footer {
   .footer-brand {
     h3 {
       font-size: 1.8rem;
-      background: linear-gradient(135deg, #e91e63, #9c27b0);
+      background: $gradient-primary;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -63,7 +65,7 @@ footer {
 
     p {
       font-style: italic;
-      color: #ff9800;
+      color: $accent-color;
     }
   }
 
@@ -81,13 +83,13 @@ footer {
       gap: 1rem;
 
       a {
-        color: #ccc;
+        color: $text-light;
         text-decoration: none;
         font-size: 1.5rem;
         transition: all 0.3s ease;
 
         &:hover {
-          color: #e91e63;
+          color: $primary-color;
           transform: scale(1.1);
         }
       }
@@ -95,18 +97,18 @@ footer {
   }
 
   .footer-bottom {
-    border-top: 1px solid #333;
+    border-top: 1px solid $neutral-dark;
     padding-top: 1rem;
     text-align: center;
 
     p {
       margin: 0.5rem 0;
       font-size: 0.9rem;
-      color: #999;
+      color: $text-light;
 
       &:last-child {
         font-style: italic;
-        color: #ff9800;
+        color: $accent-color;
       }
     }
   }

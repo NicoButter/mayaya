@@ -1,8 +1,15 @@
 // Variables SCSS para Mayaya - Nail Art Landing Page
-// Colores principales - Estilo femenino, elegante, moderno
-$primary-color: #e91e63; // Rosa elegante
-$secondary-color: #9c27b0; // Púrpura sofisticado
-$accent-color: #ff9800; // Naranja suave para acentos
+// Colores principales - Paleta institucional (Vibrant Color Fiesta)
+$amber-gold: #ffbe0bff; // Amber Gold - Luxurious yellow
+$blaze-orange: #fb5607ff; // Blaze Orange - Fierce orange blaze
+$neon-pink: #ff006eff; // Neon Pink - Explosive vibrance
+$blue-violet: #8338ecff; // Blue Violet - Radiant violet glow
+$azure-blue: #3a86ffff; // Azure Blue - Vivid energy
+
+// Backwards-compatible aliases
+$primary-color: $neon-pink;
+$secondary-color: $blue-violet;
+$accent-color: $blaze-orange;
 $neutral-light: #fafafa; // Blanco roto
 $neutral-dark: #212121; // Gris oscuro
 $text-color: #333333; // Texto principal
@@ -10,11 +17,11 @@ $text-light: #666666; // Texto secundario
 
 // Gradientes
 $gradient-primary: linear-gradient(135deg, $primary-color, $secondary-color);
-$gradient-accent: linear-gradient(135deg, $accent-color, #ff5722);
+$gradient-accent: linear-gradient(135deg, $accent-color, $amber-gold);
 
 // Tipografía
-$font-family-primary: 'Poppins', sans-serif;
-$font-family-secondary: 'Playfair Display', serif;
+$font-family-primary: "Inclusive Sans", sans-serif;
+$font-family-secondary: "Inclusive Sans", sans-serif;
 
 // Espaciado
 $spacing-xs: 0.5rem;
