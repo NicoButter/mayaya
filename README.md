@@ -92,7 +92,46 @@ Diseño adaptativo para móvil, tablet y desktop.
 - GSAP (preparado)
 - HTML5 semántico
 
-## 📝 Próximos Pasos
+## � Prerrequisitos
+
+- Node.js (versión 18 o superior)
+- npm o yarn
+
+## 🧪 Testing
+
+Para ejecutar las pruebas:
+
+```bash
+ng test
+```
+
+## 🚀 Build para Producción
+
+Para construir la aplicación para producción:
+
+```bash
+ng build --configuration production
+```
+
+Los archivos de build se almacenarán en el directorio `dist/`.
+
+## 🤝 Contribuyendo
+
+1. Fork el proyecto
+2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## ✍️ Autor
+
+**Nicolás Butterfield** - [Tu perfil o sitio web si tienes]
+
+## �📝 Próximos Pasos
 
 - Implementar IntersectionObserver para animaciones on-scroll
 - Integrar GSAP para animaciones avanzadas
