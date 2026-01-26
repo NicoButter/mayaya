@@ -1,6 +1,10 @@
 # Mayaya - Landing Page SPA
 
+![Logo Mayaya](assets/logo.png) <!-- Placeholder para el logo -->
+
 Landing Page para Mayaya, emprendimiento de nail art. Desarrollada con Angular 17+ standalone, SCSS, y animaciones suaves.
+
+**Autor:** Nicolás Butterfield - nicobutter@gmail.com - ButterStudio
 
 ## 🚀 Características
 
@@ -74,6 +78,13 @@ src/
 - **Testimonios**: Opiniones de clientas
 - **Contacto**: Formulario de reserva
 
+## 📸 Screenshots
+
+<!-- Agregar screenshots aquí -->
+![Screenshot 1](assets/screenshots/screenshot1.png)
+![Screenshot 2](assets/screenshots/screenshot2.png)
+![Screenshot 3](assets/screenshots/screenshot3.png)
+
 ## 🎨 Animaciones
 
 - Animaciones Angular básicas implementadas
@@ -129,7 +140,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## ✍️ Autor
 
-**Nicolás Butterfield** - [Tu perfil o sitio web si tienes]
+**Nicolás Butterfield** - nicobutter@gmail.com - ButterStudio
 
 ## �📝 Próximos Pasos
 
@@ -139,6 +150,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 - Conectar con backend para reservas
 - Implementar PWA features
 
----
 
-Desarrollado con ❤️ para el mundo del nail art.
