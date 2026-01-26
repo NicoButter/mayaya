@@ -61,11 +61,13 @@
     --initial-y: calc(150vh * sin(var(--angle)));
     --spread-x: calc(var(--progress) * var(--initial-x));
     --spread-y: calc(var(--progress) * var(--initial-y));
+    --opacity: calc(1 - var(--progress) * 0.7);
 
     transform: translate(var(--spread-x), var(--spread-y));
+    opacity: var(--opacity);
 
-    transition: transform 0.5s ease-out;
-    will-change: transform;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    will-change: transform, opacity;
 
     background: white;
     border-radius: 16px;
