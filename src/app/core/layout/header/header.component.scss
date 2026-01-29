@@ -1,5 +1,26 @@
 @import '../../../../styles/_variables.scss';
 
+.floating-logo {
+  position: fixed;
+  top: -20px;
+  left: 20px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+
+  img {
+    height: 450px;
+    width: auto;
+  }
+
+  &.shrunk {
+    top: 10px;
+
+    img {
+      height: 150px;
+    }
+  }
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -22,18 +43,6 @@
 
     @media (max-width: 768px) {
       padding: 1rem;
-    }
-  }
-
-  .navbar-brand {
-    h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      background: $gradient-primary;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 700;
     }
   }
 
