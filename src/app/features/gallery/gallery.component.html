@@ -8,10 +8,7 @@
     <div #galleryContainer class="gallery-grid">
       <div #galleryItem class="gallery-item" *ngFor="let item of galleryItems; let i = index" [style.transitionDelay]="i * 120 + 'ms'">
         <div class="gallery-image">
-          <div class="placeholder-image">
-            <span>{{ item.id }}</span>
-            <p>Imagen {{ item.id }}</p>
-          </div>
+          <img src="/assets/gallery/{{ item.image }}" alt="{{ item.title }}" #galleryItem>
         </div>
         <div class="gallery-info">
           <h3>{{ item.title }}</h3>
