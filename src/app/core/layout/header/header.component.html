@@ -4,6 +4,16 @@
       <h1>Mayaya</h1>
     </div>
 
+    <!-- Desktop Menu -->
+    <ul class="navbar-menu desktop">
+      <li><a href="#" (click)="scrollToSection('hero')">Inicio</a></li>
+      <li><a href="#" (click)="scrollToSection('services')">Servicios</a></li>
+      <li><a href="#" (click)="scrollToSection('gallery')">Galería</a></li>
+      <li><a href="#" (click)="scrollToSection('about')">Sobre Mí</a></li>
+      <li><a href="#" (click)="scrollToSection('testimonials')">Testimonios</a></li>
+      <li><a href="#" (click)="scrollToSection('contact')">Contacto</a></li>
+    </ul>
+
     <!-- Social Media Links -->
     <div class="social-media">
       <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
@@ -19,16 +29,6 @@
         <i class="fab fa-linkedin-in"></i>
       </a>
     </div>
-
-    <!-- Desktop Menu -->
-    <ul class="navbar-menu desktop">
-      <li><a href="#" (click)="scrollToSection('hero')">Inicio</a></li>
-      <li><a href="#" (click)="scrollToSection('services')">Servicios</a></li>
-      <li><a href="#" (click)="scrollToSection('gallery')">Galería</a></li>
-      <li><a href="#" (click)="scrollToSection('about')">Sobre Mí</a></li>
-      <li><a href="#" (click)="scrollToSection('testimonials')">Testimonios</a></li>
-      <li><a href="#" (click)="scrollToSection('contact')">Contacto</a></li>
-    </ul>
 
     <!-- Mobile Menu Button -->
     <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
