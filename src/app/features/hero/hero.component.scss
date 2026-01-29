@@ -44,6 +44,11 @@
       margin-bottom: 1.5rem;
       line-height: 1.2;
 
+      .border-text {
+        color: black;
+        text-shadow: 0 0 1px rgba($neon-pink, 0.8), 0 0 2px rgba($neon-pink, 0.6), 0 0 3px rgba($neon-pink, 0.4), 0 0 4px rgba($neon-pink, 0.2);
+      }
+
       .highlight {
         background: $gradient-accent;
         -webkit-background-clip: text;
