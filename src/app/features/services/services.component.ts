@@ -16,37 +16,37 @@ export class ServicesComponent implements AfterViewInit {
 
   serviceList: any[] = [
     {
-      icon: '💅',
+      image: 'assets/services/manos_1.jpg',
       title: 'Manicura Clásica',
       description: 'Cuidado completo de tus uñas con técnicas tradicionales y productos de alta calidad.',
       price: '$1500'
     },
     {
-      icon: '✨',
+      image: 'assets/services/manos_7.jpg',
       title: 'Nail Art Personalizado',
       description: 'Diseños únicos y creativos adaptados a tu personalidad y estilo.',
       price: '$2000'
     },
     {
-      icon: '💎',
+      image: 'assets/services/manos_8.jpg',
       title: 'Uñas en Gel',
       description: 'Uñas duraderas y brillantes con gel de larga duración.',
       price: '$2500'
     },
     {
-      icon: '🌟',
+      image: 'assets/services/manos_10.jpg',
       title: 'Extensiones',
       description: 'Alarga y fortalece tus uñas naturales con extensiones profesionales.',
       price: '$3000'
     },
     {
-      icon: '🎨',
+      image: 'assets/services/manos_13.jpg',
       title: 'Decoración Artística',
       description: 'Técnicas avanzadas de decoración con cristales, strass y diseños 3D.',
       price: '$1800'
     },
     {
-      icon: '🛁',
+      image: 'assets/services/manos_1.jpg',
       title: 'Spa de Manos',
       description: 'Tratamiento relajante con exfoliación, hidratación y masaje.',
       price: '$1200'
