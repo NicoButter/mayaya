@@ -275,35 +275,32 @@ footer {
   .footer-bottom {
     text-align: center;
     padding-top: 1.5rem;
+    position: relative;
 
     p {
-      margin: 0.5rem 0;
+      margin: 0;
       font-size: 0.95rem;
       color: rgba(255, 255, 255, 0.6);
       line-height: 1.6;
     }
 
+    .studio-logo {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 40px;
+      width: auto;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-50%) scale(1.15);
+      }
+    }
+
     .developer {
-      font-size: 0.9rem;
-
-      span {
-        background: linear-gradient(135deg, $amber-gold, $blaze-orange);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-block;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-
-      &:last-child {
-        font-style: italic;
-        color: $accent-color;
-      }
+      display: none;
     }
   }
 }
