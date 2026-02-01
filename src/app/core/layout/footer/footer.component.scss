@@ -3,7 +3,7 @@
 footer {
   background: $neutral-dark;
   color: white;
-  padding: 3rem 0 1rem;
+  padding: 4rem 0 2rem;
 
   .container {
     max-width: 1200px;
@@ -15,139 +15,290 @@ footer {
     }
   }
 
+  // Contenido en 4 columnas
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
 
-    h3, h4 {
-      margin-bottom: 1rem;
-      color: $primary-color;
-      font-family: "Inclusive Sans", sans-serif;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
     }
 
-    p {
-      margin-bottom: 0.5rem;
-      color: $text-light;
-      line-height: 1.6;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .footer-column {
+      display: flex;
+      flex-direction: column;
 
-      li {
-        margin-bottom: 0.5rem;
+      h4 {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, $neon-pink, $blue-violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
 
-        a {
-          color: $text-light;
-          text-decoration: none;
-          transition: color 0.3s ease;
+      p {
+        margin-bottom: 0.8rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
 
-          &:hover {
-            color: $primary-color;
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 0.8rem;
+
+          a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -3px;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background: $gradient-primary;
+              transition: all 0.3s ease;
+            }
+
+            &:hover {
+              color: white;
+              transform: translateX(5px);
+
+              &::after {
+                width: 100%;
+              }
+            }
           }
         }
       }
     }
-  }
 
-  .footer-brand {
-    .footer-logo {
-      margin-bottom: 1rem;
+    // Columna 1: Brand
+    .footer-brand {
+      text-align: left;
 
-      img {
-        max-height: 340px;
-        width: auto;
-        filter: none;
-        opacity: 1;
-        display: block;
-        transition: transform 0.18s ease, opacity 0.18s ease;
-        margin-bottom: 0.25rem;
+      .footer-logo {
+        margin-bottom: 1.5rem;
 
-        @media (max-width: 1200px) {
-          max-height: 260px;
-        }
-
-        @media (max-width: 768px) {
-          max-height: 160px;
-        }
-
-        &:hover {
-          transform: scale(1.02);
+        img {
+          max-height: 220px;
+          width: auto;
+          filter: none;
           opacity: 1;
+          transition: transform 0.3s ease;
+
+          @media (max-width: 1200px) {
+            max-height: 180px;
+          }
+
+          @media (max-width: 768px) {
+            max-height: 140px;
+          }
+
+          &:hover {
+            transform: scale(1.08);
+          }
         }
       }
     }
 
-    h3 {
-      font-size: 1.8rem;
-      background: $gradient-primary;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
+    // Columna 2: Links
+    .footer-links {
+      text-align: left;
     }
 
-    p {
-      font-style: italic;
-      color: $accent-color;
-    }
-  }
+    // Columna 3: Contact
+    .footer-contact {
+      text-align: left;
 
-  .footer-contact {
-    p {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      p {
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.9rem;
+      }
+    }
+
+    // Columna 4: Social
+    .footer-social {
+      text-align: left;
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transform: translateY(-3px);
+
+            svg {
+              transform: scale(1.15);
+            }
+
+            &::before {
+              width: 100px;
+              height: 100px;
+            }
+          }
+        }
+      }
     }
   }
 
   .footer-social {
     .social-links {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
+      justify-content: flex-start;
 
       a {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         text-decoration: none;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: $gradient-primary;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          border-radius: 50%;
+        }
 
         svg {
           width: 24px;
           height: 24px;
           transition: transform 0.3s ease;
+          position: relative;
+          z-index: 1;
         }
 
         &:hover {
-          background: $primary-color;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          transform: translateY(-5px) scale(1.1);
+          box-shadow: 0 8px 24px rgba($neon-pink, 0.4);
+          border-color: rgba(255, 255, 255, 0.3);
+
+          &::before {
+            opacity: 0.2;
+          }
 
           svg {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(5deg);
           }
         }
       }
     }
   }
 
+  // Separador decorativo
+  .footer-divider {
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba($neon-pink, 0.4) 20%,
+      rgba($blue-violet, 0.4) 50%,
+      rgba($amber-gold, 0.4) 80%,
+      transparent
+    );
+    margin: 3rem 0 2rem;
+    box-shadow: 0 0 20px rgba($neon-pink, 0.2);
+  }
+
+  // Footer bottom
   .footer-bottom {
-    border-top: 1px solid $neutral-dark;
-    padding-top: 1rem;
     text-align: center;
+    padding-top: 1.5rem;
 
     p {
       margin: 0.5rem 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+    }
+
+    .developer {
       font-size: 0.9rem;
-      color: $text-light;
+
+      span {
+        background: linear-gradient(135deg, $amber-gold, $blaze-orange);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
 
       &:last-child {
         font-style: italic;
