@@ -1,49 +1,5 @@
 @import '../../../../styles/_variables.scss';
 
-.floating-logo {
-  position: fixed;
-  top: -20px;
-  left: 20px;
-  z-index: 1001;
-  transition: all 0.3s ease;
-  background: transparent;
-  backdrop-filter: none;
-  border-radius: 50%;
-  padding: 15px;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  box-shadow: none;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-  }
-
-  &.shrunk {
-    top: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    padding: 10px;
-    width: 200px;
-    height: 200px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      filter: none;
-    }
-  }
-}
-
 .navbar {
   position: fixed;
   top: 0;
@@ -100,6 +56,33 @@
     @media (max-width: 768px) {
       padding: 1rem;
       transition: padding 0.6s ease-in-out;
+    }
+
+    .navbar-brand {
+      flex: 1;
+
+      .brand-text {
+        font-size: 2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, $neon-pink, $blue-violet, $amber-gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-decoration: none;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-shadow: 0 0 20px rgba($neon-pink, 0.3);
+
+        &:hover {
+          transform: scale(1.05);
+          filter: brightness(1.2);
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 

@@ -1,11 +1,7 @@
-<div class="floating-logo" [class.shrunk]="isScrolled">
-  <img src="assets/logo_mayaya_nb_3d.png" alt="Mayaya Logo">
-</div>
-
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container">
     <div class="navbar-brand">
-      <!-- Logo moved to floating -->
+      <a href="#" (click)="scrollToSection('hero')" class="brand-text">Mayaya</a>
     </div>
 
     <!-- Desktop Menu -->
