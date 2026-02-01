@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, QueryList, ViewChildren, HostListener } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ export class ServicesComponent implements AfterViewInit {
   @ViewChild('sectionHeader', { static: true }) sectionHeader!: ElementRef;
   @ViewChild('services', { static: true }) servicesSection!: ElementRef<HTMLElement>;
 
-  scrollProgress = 0;
+  private observer!: IntersectionObserver;
 
   serviceList: any[] = [
     {
@@ -54,58 +54,40 @@ export class ServicesComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {
-    // Set CSS custom properties for each card index
-    const cards = this.servicesSection.nativeElement.querySelectorAll('.service-card');
-    cards.forEach((card, index) => {
-      (card as HTMLElement).style.setProperty('--i', index.toString());
-    });
-
-    // Removed anime.js calls
-    // slideUp(this.sectionHeader.nativeElement, 800);
-
-    // Animación escalonada para las cards
-    // const cards = this.serviceCards.toArray().map(ref => ref.nativeElement);
-    // staggerFadeIn(cards, 800, 150);
+    this.setupIntersectionObserver();
   }
 
-  @HostListener('window:scroll')
-  onScroll() {
-    // Calculamos el progreso basado en la distancia del centro de la sección servicios al centro del viewport
-    const servicesRect = this.servicesSection.nativeElement.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const scrollY = window.scrollY;
+  private setupIntersectionObserver() {
+    const options = {
+      root: null,
+      rootMargin: '-100px',
+      threshold: 0.1
+    };
 
-    // Centro de la sección servicios
-    const sectionCenter = servicesRect.top + scrollY + servicesRect.height / 2;
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
 
-    // Centro del viewport
-    const viewportCenter = scrollY + vh / 2;
-
-    // Distancia entre centros
-    const distance = Math.abs(sectionCenter - viewportCenter);
-
-    // Zona muerta donde las tarjetas quedan perfectamente ordenadas (200px)
-    const deadZone = 200;
-
-    // Rango de transición (medio viewport)
-    const transitionRange = vh / 2;
-
-    let progress: number;
-    if (distance <= deadZone) {
-      // Zona donde las tarjetas están perfectamente ordenadas
-      progress = 0;
-    } else if (distance <= deadZone + transitionRange) {
-      // Transición gradual
-      progress = (distance - deadZone) / transitionRange;
-    } else {
-      // Cuando está lejos, tarjetas volando
-      progress = 1;
+    // Observe header
+    if (this.sectionHeader) {
+      this.observer.observe(this.sectionHeader.nativeElement);
     }
 
-    this.scrollProgress = progress;
+    // Observe each service card
+    const cards = this.servicesSection.nativeElement.querySelectorAll('.service-card');
+    cards.forEach((card, index) => {
+      (card as HTMLElement).style.setProperty('--stagger-index', index.toString());
+      this.observer.observe(card);
+    });
+  }
 
-    // Aplicamos el progreso a la sección de servicios
-    const section = this.servicesSection.nativeElement;
-    section.style.setProperty('--progress', this.scrollProgress.toString());
+  ngOnDestroy() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 }

@@ -54,6 +54,33 @@ footer {
   }
 
   .footer-brand {
+    .footer-logo {
+      margin-bottom: 1rem;
+
+      img {
+        max-height: 340px;
+        width: auto;
+        filter: none;
+        opacity: 1;
+        display: block;
+        transition: transform 0.18s ease, opacity 0.18s ease;
+        margin-bottom: 0.25rem;
+
+        @media (max-width: 1200px) {
+          max-height: 260px;
+        }
+
+        @media (max-width: 768px) {
+          max-height: 160px;
+        }
+
+        &:hover {
+          transform: scale(1.02);
+          opacity: 1;
+        }
+      }
+    }
+
     h3 {
       font-size: 1.8rem;
       background: $gradient-primary;
