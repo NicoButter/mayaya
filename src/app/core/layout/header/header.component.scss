@@ -6,8 +6,8 @@
   left: 20px;
   z-index: 1001;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
+  background: transparent;
+  backdrop-filter: none;
   border-radius: 50%;
   padding: 15px;
   width: 400px;
@@ -15,13 +15,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: none;
+  box-shadow: none;
 
   img {
     height: 100%;
     width: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   }
 
   &.shrunk {
@@ -38,6 +39,7 @@
       height: 100%;
       width: 100%;
       object-fit: contain;
+      filter: none;
     }
   }
 }
@@ -46,21 +48,44 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
+  background: transparent;
+  backdrop-filter: none;
   z-index: 1000;
   transition: all 0.6s ease-in-out;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  border: none;
 
   &.scrolled {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 
     .container {
       padding: 0.5rem 2rem;
 
       @media (max-width: 768px) {
         padding: 0.5rem;
+      }
+    }
+
+    .navbar-menu li a {
+      color: $neutral-dark;
+      text-shadow: none;
+
+      &:hover {
+        color: $primary-color;
+        text-shadow: 0 0 15px rgba($primary-color, 0.4);
+      }
+    }
+
+    .social-media a {
+      color: $neutral-dark;
+      text-shadow: none;
+
+      &:hover {
+        color: $primary-color;
+        text-shadow: 0 0 15px rgba($primary-color, 0.4);
       }
     }
   }
@@ -83,13 +108,15 @@
     gap: 1rem;
 
     a {
-      color: $text-color;
+      color: white;
       font-size: 1.2rem;
       transition: color 0.3s ease, transform 0.3s ease;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
       &:hover {
         color: $primary-color;
         transform: scale(1.1);
+        text-shadow: 0 0 20px rgba($primary-color, 0.6);
       }
 
       i {
@@ -160,9 +187,15 @@
         display: block;
         padding: 1rem 1.5rem;
         text-decoration: none;
-        color: $text-color;
+        color: white;
+        font-weight: 500;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        transition: all 0.3s ease;
+        
         &:hover {
-          color: $primary-color;
+          color: $amber-gold;
+          text-shadow: 0 0 20px rgba($amber-gold, 0.6);
 
           &::after {
             width: 100%;
@@ -199,7 +232,9 @@
     span {
       width: 25px;
       height: 3px;
-      background: $neutral-dark;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
 
     &.active {
